@@ -52,7 +52,7 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
                       var.axes = TRUE, 
                       circle = FALSE, circle.prob = 0.69, 
                       varname.size = 3, varname.adjust = 1.5, 
-                      varname.abbrev = FALSE, ...)
+                      varname.abbrev = FALSE,group.sizes=NULL, ...)
 {
   library(ggplot2)
   library(plyr)
@@ -175,9 +175,9 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
     }
   } else {
     if(!is.null(df.u$groups)) {
-      g <- g + geom_point(aes(color = groups), alpha = alpha)
+      g <- g + geom_point(aes(color = groups), alpha = alpha,size=group.sizes)
     } else {
-      g <- g + geom_point(alpha = alpha)      
+      g <- g + geom_point(alpha = alpha,size=group.sizes)      
     }
   }
 
