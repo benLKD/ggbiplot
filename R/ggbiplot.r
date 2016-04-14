@@ -175,7 +175,7 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
     }
   } else {
     if(!is.null(df.u$groups)) {
-      g <- g + geom_point(aes(color = groups), alpha = alpha,size=group.sizes)
+      g <- g + geom_point(aes(color = groups,size=group.sizes), alpha = alpha)
     } else {
       g <- g + geom_point(alpha = alpha)      
     }
