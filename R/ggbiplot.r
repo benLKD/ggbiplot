@@ -119,7 +119,7 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
 
   # Append the proportion of explained variance to the axis labels
   u.axis.labs <- paste(u.axis.labs, 
-                       sprintf('(%0.1f%% explained var.)', 
+                       sprintf('(%0.1f%% explained variable)', 
                                100 * pcobj$sdev[choices]^2/sum(pcobj$sdev^2)))
 
   # Score Labels
@@ -177,7 +177,7 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
     if(!is.null(df.u$groups)) {
       g <- g + geom_point(aes(color = groups), alpha = alpha,size=group.sizes)
     } else {
-      g <- g + geom_point(alpha = alpha,size=group.sizes)      
+      g <- g + geom_point(alpha = alpha)      
     }
   }
 
